@@ -2,4 +2,4 @@
 <% for event in @events %>
 <li><%= link_to event.artist, "/events/#{event.id}" %></li>
 <% end %> </ul>
-<%= link_to 'Nowe ogłoszenie', events_new_path %>
+<%= link_to 'Nowe ogłoszenie', new_event_path %>
