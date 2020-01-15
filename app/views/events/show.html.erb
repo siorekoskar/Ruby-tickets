@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Artysta</h1>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @event.artist %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @event.description %>
+</p>
+
+<p>
+  <strong>Price low:</strong>
+  <%= @event.price_low %>
+</p>
+
+<p>
+  <strong>Price high:</strong>
+  <%= @event.price_high %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @event.event_date %>
+</p>
+
+<%= link_to 'Back', events_index_path %>
