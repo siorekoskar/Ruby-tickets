@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :events, :only => [:index, :new, :create, :show]
   # get 'events/new' => 'events#new'
   # get 'events/create'
