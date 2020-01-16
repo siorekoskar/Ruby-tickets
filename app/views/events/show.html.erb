@@ -28,4 +28,6 @@
   <%= @event.event_date %>
 </p>
 
+<%= render "new_ticket", ticket: Ticket.new(:event_id=>@event.id) %>
+
 <%= link_to 'Back', events_path %>
