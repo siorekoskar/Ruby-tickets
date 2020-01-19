@@ -41,13 +41,14 @@
     <%= form.text_field :email_address %>
   </div>
 
-    <div class="field">
+  <div class="field">
     <%= form.label :event_id %>
     <%= form.hidden_field :event_id, :value => ticket.event_id%>
   </div>
-  
+  <%= form.select :event_id, Event.all.map { |c| [c.artist + ' ' + c.event_date.to_s, c.id]}, :selected => ticket.event_id %>
 
   <div class="actions">
     <%= form.submit class: "btn btn-primary" %>
   </div>
+  
 <% end %>

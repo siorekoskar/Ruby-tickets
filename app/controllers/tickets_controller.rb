@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show] 
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  # before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
   # before_action :update_ticket, only: [:create]
 
@@ -8,6 +8,7 @@ class TicketsController < ApplicationController
   # GET /tickets.json
   def index
     @tickets = Ticket.all
+    @events = Event.all
   end
 
   # GET /tickets/1
@@ -21,7 +22,7 @@ class TicketsController < ApplicationController
   end
 
   # GET /tickets/1/edit
-  def edit
+  def edit 
   end
 
   # POST /tickets
