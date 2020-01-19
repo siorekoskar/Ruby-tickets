@@ -7,4 +7,14 @@ class Ticket < ApplicationRecord
     validates :phone, :presence => true
 
     belongs_to :event
+
+    validate :paid_in_range
+
+    private
+
+    def paid_in_range
+        if price < event.price_low or price > event.price_high
+            errors.add('Cena', 'musi byc w zasiegu')
+        end
+    end
 end
