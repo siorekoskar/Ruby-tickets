@@ -7,6 +7,7 @@ class Ticket < ApplicationRecord
     validates :phone, :presence => true
 
     belongs_to :event
+    belongs_to :user
 
     validate :paid_in_range
 

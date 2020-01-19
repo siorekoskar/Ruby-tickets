@@ -45,7 +45,12 @@
     <%= form.label :event_id %>
     <%= form.hidden_field :event_id, :value => ticket.event_id%>
   </div>
+
   <%= form.select :event_id, Event.all.map { |c| [c.artist + ' ' + c.event_date.to_s, c.id]}, :selected => ticket.event_id %>
+
+<div class="field">
+    <%= form.hidden_field :user_id, :value => current_user.id%>
+  </div>
 
   <div class="actions">
     <%= form.submit class: "btn btn-primary" %>
