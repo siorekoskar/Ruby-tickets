@@ -25,7 +25,7 @@
         <td><%= ticket.price %></td>
         <td><%= ticket.phone %></td>
         <td><%= ticket.email_address %></td>
-        <td><%= ticket.user %></td>
+        <td><%= ticket.user.email %></td>
         <td><%= link_to 'Show', ticket %></td>
         <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
         <td><%= button_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>

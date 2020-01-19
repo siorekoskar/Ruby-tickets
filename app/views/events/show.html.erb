@@ -29,6 +29,10 @@
 </p>
 
 <%= render "tickets_list", tickets: @event.tickets %>
+
+<%if current_user != nil%>
 <%= render "new_ticket", ticket: Ticket.new(:event_id=>@event.id) %>
+<% end%>
+
 
 <%= link_to 'Back', events_path %>

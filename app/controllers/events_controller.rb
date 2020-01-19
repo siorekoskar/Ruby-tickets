@@ -33,7 +33,6 @@ class EventsController < ApplicationController
     end
 
     def check_logged_in
-      authenticate_or_request_with_http_basic("Ads") do |username, password|
-      username == "admin" && password == "admin" end
+      redirect_to events_path, notice: "Nie jesteś uprawniony" if current_user.nil? or !current_user.isAdmin 
     end
 end

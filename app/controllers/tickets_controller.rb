@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show] 
-  # before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
   # before_action :update_ticket, only: [:create]
 
@@ -79,5 +79,5 @@ class TicketsController < ApplicationController
 
     def correct_user
       @ticket = current_user.tickets.find_by(id: params[:id])
-      redirect_to tickets_path, notice: "Nie jesteś uprawniony do edycji tego biletu" if @ticket.nil? end
+      redirect_to tickets_path, notice: "Nie jesteś uprawniony do edycji tego biletu" if @ticket.nil? and !current_user.isAdmin end
 end
