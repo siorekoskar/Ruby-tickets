@@ -10,17 +10,21 @@
   </head>
 
   <body>
-   <p class="navbar-text pull-right"> <% if user_signed_in? %>
+  <nav class="navbar navbar-dark bg-primary" >
+  <a class="navbar-brand" href="/events" style="color: white">Events</a>
+  <a class="navbar-brand" href="/tickets" style="color: white">Tickets</a>
+  <p class="navbar-text pull-right"> <% if user_signed_in? %>
 Logged in as <strong><%= current_user.email %></strong>.
   <% if current_user.isAdmin%>
   ADMIN
   <% end%>
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'
-%>
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link ', :style => 'color: white; text-decoration: none' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link', :style => 'color: white; text-decoration: none'%>
 <% else %>
-<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> | <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
+<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link', :style => 'color: white'%> | <%= link_to "Login", new_user_session_path, :class => 'navbar-link', :style => 'color: white; text-decoration: none' %>
 <% end %> </p>
+</nav>
+   
 
   <% if notice %>
 <p class="alert alert-success"><%= notice %></p>

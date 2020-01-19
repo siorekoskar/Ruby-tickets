@@ -11,34 +11,38 @@
     </div>
   <% end %>
 
+    <div class="row">
+        <div class="col-sm-12  mx-auto p-4">
+<div class="form-group" style="margin-left: 100px; margin-right: 100px">
+<h1>New Ticket</h1>
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, :class => "form-control"%>
   </div>
 
   <div class="field">
     <%= form.label :seat_id_seq %>
-    <%= form.text_field :seat_id_seq %>
+    <%= form.text_field :seat_id_seq, :class => "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :address %>
-    <%= form.text_area :address %>
+    <%= form.text_area :address, :class => "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, :class => "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :phone %>
-    <%= form.text_field :phone %>
+    <%= form.text_field :phone, :class => "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :email_address %>
-    <%= form.text_field :email_address %>
+    <%= form.text_field :email_address, :class => "form-control" %>
   </div>
 
   <div class="field">
@@ -46,7 +50,8 @@
     <%= form.hidden_field :event_id, :value => ticket.event_id%>
   </div>
 
-  <%= form.select :event_id, Event.all.map { |c| [c.artist + ' ' + c.event_date.to_s, c.id]}, :selected => ticket.event_id %>
+<%= form.select(:event_id, options_for_select(Event.all.map { |c| [c.artist + ' ' + c.event_date.to_s, c.id]}, ticket.event_id), {}, {class: "form-control", id: "dropdownMenuButton"}) %>
+
 
 <div class="field">
     <%= form.hidden_field :user_id, :value => current_user.id%>
@@ -56,4 +61,7 @@
     <%= form.submit class: "btn btn-primary" %>
   </div>
   
+  </div>
+  </div>
+  </div>
 <% end %>

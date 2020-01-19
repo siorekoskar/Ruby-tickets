@@ -1,5 +1,7 @@
-<h1> Wszystkie wydarzenia</h1> <ul>
+<h1> Wszystkie wydarzenia</h1> <ul class="list-group">
 <% for event in @events %>
-<li><%= link_to event.artist, "/events/#{event.id}" %></li>
+<li class="list-group-item"><%= link_to event.artist, "/events/#{event.id}" %></li>
 <% end %> </ul>
-<%= link_to 'Nowe ogłoszenie', new_event_path %>
+<div class="btn btn-primary">
+<%= link_to 'Nowe ogłoszenie', new_event_path, :style => 'color: white; text-decoration: none'%>
+</div>
