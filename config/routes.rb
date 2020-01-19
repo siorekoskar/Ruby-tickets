@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # get 'events/create'
   # get 'events/:id' => 'events#show'
   # post '/events' => 'events#create'
-  root :to => "tickets#index"
+  root :to => "events#index"
   resources :tickets
   devise_for :users
 devise_scope :user do

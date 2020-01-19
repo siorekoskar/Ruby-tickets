@@ -1,4 +1,4 @@
-<h1> Wszystkie wydarzenia</h1> <ul class="list-group">
+<h1> All events</h1> <ul class="list-group">
 <% for event in @events %>
 <li class="list-group-item"><%= link_to event.artist, "/events/#{event.id}" %></li>
 <% end %> </ul>
